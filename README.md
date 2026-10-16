@@ -30,11 +30,11 @@
   The exact sources, output fields, and destination depend on the nodes configured in your exported workflow.
 
 ### 🔮 Inside the Workflow
-
+  
   Two news feeds. One AI-powered pipeline. A curated news digest delivered to your inbox.
 
 ### ⚙️ Workflow Architecture
-
+```
   flowchart TD
       A["⏰ Schedule Trigger"]
       B["📰 RSS NoralTech"]
@@ -53,7 +53,7 @@
       E --> F
       G -. AI Model .-> F
       F --> H
-
+```
 
 ### ◈ Workflow at a glance
 
@@ -161,13 +161,13 @@
   - Thinking about reliability, output structure, and credential security.
 
 ### ✨ How it works
-
+```
   Collect: The Schedule Trigger initiates the workflow and retrieves articles from the configured RSS feeds.
   Combine: The Merge node brings together incoming items from both sources.
   Aggregate: The Data Aggregator organizes the collected news for processing.
   Summarize: Google Gemini processes the content through the Basic LLM Chain to generate concise AI-powered summaries.
   Deliver: Gmail sends the generated news digest to the configured recipient.
-  
+```
 ### 🪄 The bigger picture
 
   AI is most useful when it helps people act on information—not simply generate more of it. This project explores one small way to make a high-volume information stream easier to navigate.
