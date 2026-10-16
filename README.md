@@ -29,6 +29,54 @@
   - Reduce repetitive work involved in manually opening and summarizing multiple articles.
   The exact sources, output fields, and destination depend on the nodes configured in your exported workflow.
 
+## 🔮 Inside the Workflow
+
+Two news feeds. One AI-powered pipeline. A curated news digest delivered to your inbox.
+
+```mermaid
+flowchart LR
+    A["⏰ Schedule Trigger"] --> B["📰 RSS: NoralTech"]
+    A --> C["📰 RSS: AIBusiness"]
+    B --> D["🔀 Merge"]
+    C --> D
+    D --> E["📦 Data Aggregator"]
+    E --> F["✨ Basic LLM Chain"]
+    G["🧠 Google Gemini"] -.-> F
+    F --> H["📧 Gmail Delivery"]
+
+    style A fill:#172554,color:#fff,stroke:#60A5FA
+    style B fill:#7C2D12,color:#fff,stroke:#FB923C
+    style C fill:#7C2D12,color:#fff,stroke:#FB923C
+    style D fill:#164E63,color:#fff,stroke:#22D3EE
+    style E fill:#164E63,color:#fff,stroke:#22D3EE
+    style F fill:#4C1D95,color:#fff,stroke:#C4B5FD
+    style G fill:#1E3A8A,color:#fff,stroke:#93C5FD
+    style H fill:#065F46,color:#fff,stroke:#6EE7B7
+```
+
+### 🔮 Inside the Workflow
+
+  Two news feeds. One AI-powered pipeline. A curated news digest delivered to your inbox.
+  
+  flowchart LR
+      A["⏰ Schedule Trigger"] --> B["📰 RSS: NoralTech"]
+      A --> C["📰 RSS: AIBusiness"]
+      B --> D["🔀 Merge"]
+      C --> D
+      D --> E["📦 Data Aggregator"]
+      E --> F["✨ Basic LLM Chain"]
+      G["🧠 Google Gemini"] -.-> F
+      F --> H["📧 Gmail Delivery"]
+  
+      style A fill:#172554,color:#fff,stroke:#60A5FA
+      style B fill:#7C2D12,color:#fff,stroke:#FB923C
+      style C fill:#7C2D12,color:#fff,stroke:#FB923C
+      style D fill:#164E63,color:#fff,stroke:#22D3EE
+      style E fill:#164E63,color:#fff,stroke:#22D3EE
+      style F fill:#4C1D95,color:#fff,stroke:#C4B5FD
+      style G fill:#1E3A8A,color:#fff,stroke:#93C5FD
+      style H fill:#065F46,color:#fff,stroke:#6EE7B7
+
 ### ◈ Workflow at a glance
 
 ```mermaid
@@ -102,7 +150,7 @@
   - Confirm that the news sources permit your intended use.
   - Verify summaries against the original article before relying on important claims.
   - Avoid publishing API keys, access tokens, private URLs, or personal data.
-  - 
+   
 ### 🧪 Ideas for the next version
 
   - [ ] Categorize stories by AI, technology, business, science, and other topics.
@@ -112,13 +160,13 @@
   - [ ] Save summaries to Google Sheets, Notion, or a database.
   - [ ] Send a daily digest through email or a messaging platform.
   - [ ] Add a relevance score and a configurable summary length.
-  - [ ] 
+
 ### 📂 Suggested repository layout
 ```
   ai-news-summarizer/
   ├── README.md
   ├── workflow/
-  │   └── ai-news-summarizer.json
+     └── ai-news-summarizer.json
 ```
 
 ### 🔐 Security
@@ -133,7 +181,15 @@
   - Writing prompts for concise, useful summaries.
   - Connecting external data sources with AI services.
   - Thinking about reliability, output structure, and credential security.
-  - 
+
+### ✨ How it works
+
+  Collect: The Schedule Trigger initiates the workflow and retrieves articles from the configured RSS feeds.
+  Combine: The Merge node brings together incoming items from both sources.
+  Aggregate: The Data Aggregator organizes the collected news for processing.
+  Summarize: Google Gemini processes the content through the Basic LLM Chain to generate concise AI-powered summaries.
+  Deliver: Gmail sends the generated news digest to the configured recipient.
+  
 ### 🪄 The bigger picture
 
   AI is most useful when it helps people act on information—not simply generate more of it. This project explores one small way to make a high-volume information stream easier to navigate.
