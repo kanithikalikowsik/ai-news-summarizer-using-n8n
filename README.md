@@ -31,10 +31,10 @@
 
 ### 🔮 Inside the Workflow
   
-  Two news feeds. One AI-powered pipeline. A curated news digest delivered to your inbox.
+   Two news feeds. One AI-powered pipeline. A curated news digest delivered to your inbox.
 
 ### ⚙️ Workflow Architecture
-```
+
   flowchart LR
     A["⏰ Schedule Trigger"] --> B["📰 RSS: NoralTech"]
     A --> C["📰 RSS: AIBusiness"]
@@ -53,7 +53,7 @@
     style F fill:#4C1D95,color:#fff,stroke:#C4B5FD
     style G fill:#1E3A8A,color:#fff,stroke:#93C5FD
     style H fill:#065F46,color:#fff,stroke:#6EE7B7
-```
+
 
 ### ◈ Workflow at a glance
 
