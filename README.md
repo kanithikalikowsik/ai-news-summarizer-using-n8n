@@ -29,53 +29,31 @@
   - Reduce repetitive work involved in manually opening and summarizing multiple articles.
   The exact sources, output fields, and destination depend on the nodes configured in your exported workflow.
 
-## 🔮 Inside the Workflow
-
-Two news feeds. One AI-powered pipeline. A curated news digest delivered to your inbox.
-
-```mermaid
-flowchart LR
-    A["⏰ Schedule Trigger"] --> B["📰 RSS: NoralTech"]
-    A --> C["📰 RSS: AIBusiness"]
-    B --> D["🔀 Merge"]
-    C --> D
-    D --> E["📦 Data Aggregator"]
-    E --> F["✨ Basic LLM Chain"]
-    G["🧠 Google Gemini"] -.-> F
-    F --> H["📧 Gmail Delivery"]
-
-    style A fill:#172554,color:#fff,stroke:#60A5FA
-    style B fill:#7C2D12,color:#fff,stroke:#FB923C
-    style C fill:#7C2D12,color:#fff,stroke:#FB923C
-    style D fill:#164E63,color:#fff,stroke:#22D3EE
-    style E fill:#164E63,color:#fff,stroke:#22D3EE
-    style F fill:#4C1D95,color:#fff,stroke:#C4B5FD
-    style G fill:#1E3A8A,color:#fff,stroke:#93C5FD
-    style H fill:#065F46,color:#fff,stroke:#6EE7B7
-```
-
 ### 🔮 Inside the Workflow
 
   Two news feeds. One AI-powered pipeline. A curated news digest delivered to your inbox.
+
+### ⚙️ Workflow Architecture
+
+  flowchart TD
+      A["⏰ Schedule Trigger"]
+      B["📰 RSS NoralTech"]
+      C["📰 RSS AIBusiness"]
+      D["🔀 Merge"]
+      E["📦 Data Aggregator"]
+      F["✨ Basic LLM Chain"]
+      G["🧠 Google Gemini Chat Model"]
+      H["📧 Gmail - Send a Message"]
   
-  flowchart LR
-      A["⏰ Schedule Trigger"] --> B["📰 RSS: NoralTech"]
-      A --> C["📰 RSS: AIBusiness"]
-      B --> D["🔀 Merge"]
+      A --> B
+      A --> C
+      B --> D
       C --> D
-      D --> E["📦 Data Aggregator"]
-      E --> F["✨ Basic LLM Chain"]
-      G["🧠 Google Gemini"] -.-> F
-      F --> H["📧 Gmail Delivery"]
-  
-      style A fill:#172554,color:#fff,stroke:#60A5FA
-      style B fill:#7C2D12,color:#fff,stroke:#FB923C
-      style C fill:#7C2D12,color:#fff,stroke:#FB923C
-      style D fill:#164E63,color:#fff,stroke:#22D3EE
-      style E fill:#164E63,color:#fff,stroke:#22D3EE
-      style F fill:#4C1D95,color:#fff,stroke:#C4B5FD
-      style G fill:#1E3A8A,color:#fff,stroke:#93C5FD
-      style H fill:#065F46,color:#fff,stroke:#6EE7B7
+      D --> E
+      E --> F
+      G -. AI Model .-> F
+      F --> H
+
 
 ### ◈ Workflow at a glance
 
