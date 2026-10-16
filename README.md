@@ -34,7 +34,7 @@
    Two news feeds. One AI-powered pipeline. A curated news digest delivered to your inbox.
 
 ### ⚙️ Workflow Architecture
-
+```
   flowchart LR
     A["⏰ Schedule Trigger"] --> B["📰 RSS: NoralTech"]
     A --> C["📰 RSS: AIBusiness"]
@@ -44,7 +44,7 @@
     E --> F["✨ Basic LLM Chain"]
     G["🧠 Google Gemini"] -.-> F
     F --> H["📧 Gmail Delivery"]
-
+```
     style A fill:#172554,color:#fff,stroke:#60A5FA
     style B fill:#7C2D12,color:#fff,stroke:#FB923C
     style C fill:#7C2D12,color:#fff,stroke:#FB923C
