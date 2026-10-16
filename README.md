@@ -45,15 +45,6 @@
     G["🧠 Google Gemini"] -.-> F
     F --> H["📧 Gmail Delivery"]
 ```
-    style A fill:#172554,color:#fff,stroke:#60A5FA
-    style B fill:#7C2D12,color:#fff,stroke:#FB923C
-    style C fill:#7C2D12,color:#fff,stroke:#FB923C
-    style D fill:#164E63,color:#fff,stroke:#22D3EE
-    style E fill:#164E63,color:#fff,stroke:#22D3EE
-    style F fill:#4C1D95,color:#fff,stroke:#C4B5FD
-    style G fill:#1E3A8A,color:#fff,stroke:#93C5FD
-    style H fill:#065F46,color:#fff,stroke:#6EE7B7
-
 
 ### ◈ Workflow at a glance
 
