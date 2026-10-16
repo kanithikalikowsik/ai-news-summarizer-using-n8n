@@ -34,7 +34,7 @@
    Two news feeds. One AI-powered pipeline. A curated news digest delivered to your inbox.
 
 ### ⚙️ Workflow Architecture
-```
+```mermaid
   flowchart LR
     A["⏰ Schedule Trigger"] --> B["📰 RSS: NoralTech"]
     A --> C["📰 RSS: AIBusiness"]
